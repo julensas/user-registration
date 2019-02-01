@@ -3,11 +3,10 @@
 $bg-color: #EEF1F3;
 $blue: #007aca;
 $black: #282828;
+$error: #b94a48;
 
 * {
   box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-overflow-scrolling: touch;
   margin: 0;
   padding: 0;
   min-height: 0;
@@ -19,6 +18,7 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {

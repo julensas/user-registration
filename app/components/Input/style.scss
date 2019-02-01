@@ -1,0 +1,30 @@
+@import "~styles/default.scss";
+
+.input {
+  margin-bottom: 2em;
+  position: relative;
+   > label > input {
+     border: 1px solid #e5e5e5;
+     padding: .7em;
+     display: inline-block;
+     width: 100%;
+     &:focus {
+       border: 1px solid transparent;
+       outline: 1px solid #bfddff;
+     }
+  }
+  .label {
+    font-size: 1em;
+  }
+
+  .error {
+    color: $error;
+    font-size: 1em;
+    position: absolute;
+    left: 0;
+    font-weight: 400;
+    bottom: -1.5em;
+  }
+}
+
+
