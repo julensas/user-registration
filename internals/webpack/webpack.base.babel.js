@@ -37,19 +37,23 @@ module.exports = options => ({
       {
         test: /\.scss$/,
         include: [path.resolve('app/styles')],
-        use: [{
-          loader: 'style-loader',
-        }, {
-          loader: 'css-loader',
-          options: {
-            sourceMap: process.env.NODE_ENV === 'development',
+        use: [
+          {
+            loader: 'style-loader',
           },
-        }, {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: process.env.NODE_ENV === 'development',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: process.env.NODE_ENV === 'development',
+            },
           },
-        }],
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: process.env.NODE_ENV === 'development',
+            },
+          },
+        ],
       },
       {
         // Preprocess 3rd party .css files located in node_modules
