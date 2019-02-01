@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import UserForm from 'components/UserForm';
 import style from './style.scss';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -18,6 +19,7 @@ export default class HomePage extends React.PureComponent {
     return (
       <div className={style.homePage}>
         <h1>User registration</h1>
+        <UserForm />
       </div>
     );
   }
