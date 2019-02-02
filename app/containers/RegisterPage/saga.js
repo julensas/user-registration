@@ -1,6 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import { geocode, parseAddress, getLatLng } from 'utils/geocode';
+import genGuid from 'utils/guid';
 import {
   stopSubmit,
   change,
@@ -8,6 +9,7 @@ import {
   setSubmitSucceeded,
 } from 'redux-form';
 import { push } from 'connected-react-router';
+import { DATA_KEY } from 'containers/App/constants';
 import { REGISTER, GET_ADDRESS } from './constants';
 
 function* register({ payload }) {
@@ -25,9 +27,16 @@ function* register({ payload }) {
       yield put(stopSubmit('user'));
       yield put(setSubmitSucceeded('user'));
       yield call(delay, 1000);
+      const user = { ...payload, coordinates, id: genGuid() };
+      const users = JSON.parse(localStorage.getItem(DATA_KEY));
+      if (!users) {
+        localStorage.setItem(DATA_KEY, JSON.stringify([user]));
+      } else {
+        users.push(user);
+        localStorage.setItem(DATA_KEY, JSON.stringify(users));
+      }
       yield put(push('/list'));
     }
-    console.log(geoResults);
   } catch (e) {
     yield put(stopSubmit('user', { address: { city: 'Invalid Address' } }));
   }

@@ -1,13 +1,13 @@
-import { defaultAction } from '../actions';
-import { DEFAULT_ACTION } from '../constants';
+import { clearState } from '../actions';
+import { CLEAR_STATE } from '../constants';
 
 describe('UserListPage actions', () => {
   describe('Default Action', () => {
     it('has a type of DEFAULT_ACTION', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: CLEAR_STATE,
       };
-      expect(defaultAction()).toEqual(expected);
+      expect(clearState()).toEqual(expected);
     });
   });
 });

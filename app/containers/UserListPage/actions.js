@@ -4,10 +4,16 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import { GET_DATA, CLEAR_STATE } from './constants';
 
-export function defaultAction() {
+export function getData() {
   return {
-    type: DEFAULT_ACTION,
+    type: GET_DATA,
+  };
+}
+
+export function clearState() {
+  return {
+    type: CLEAR_STATE,
   };
 }

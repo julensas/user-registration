@@ -1,6 +1,12 @@
-// import { take, call, put, select } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
+import { DATA_KEY } from 'containers/App/constants';
+import { GET_DATA, GET_DATA_SUCCESS } from './constants';
 
-// Individual exports for testing
+function* getData() {
+  const users = JSON.parse(localStorage.getItem(DATA_KEY));
+  yield put({ type: GET_DATA_SUCCESS, payload: users || [] });
+}
+
 export default function* userListPageSaga() {
-  // See example in containers/HomePage/saga.js
+  yield takeEvery(GET_DATA, getData);
 }

@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import style from './style.scss';
 
 function Input({ label, input, meta: { touched, error } }) {
-  console.log(input);
   return (
     <div className={style.input}>
       <label className={style.label}>

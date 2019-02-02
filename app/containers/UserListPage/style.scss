@@ -1,0 +1,13 @@
+@import "~styles/default.scss";
+
+.list {
+  background-color: white;
+  padding: 10px;
+  min-height: 500px;
+  table {
+    width: 100%;
+    thead{
+      color: $blue;
+    }
+  }
+}
