@@ -1,0 +1,17 @@
+@import "~styles/default.scss";
+
+.form {
+  margin-bottom: 50px;
+  .map {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 10px;
+    width: 50%;
+    height: 332px;
+  }
+  .address {
+    width: 50%;
+    vertical-align: top;
+    display: inline-block;
+  }
+}

@@ -10,7 +10,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
+import RegisterPage from 'containers/RegisterPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import UserListPage from 'containers/UserListPage/Loadable';
 import EditPage from 'containers/EditPage/Loadable';
@@ -26,7 +26,7 @@ export default function App() {
     <div className={styles.app}>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={RegisterPage} />
         <Route exact path="/list" component={UserListPage} />
         <Route exact path="/edit" component={EditPage} />
         <Route component={NotFoundPage} />

@@ -1,0 +1,31 @@
+@import "~styles/default.scss";
+
+.button {
+  background: #007aca none repeat scroll 0% 0%;
+  color: #f9f9f9;
+  padding: .4em 1.5em .4em 1.5em;
+  text-shadow: none;
+  border: 0 solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  float: right;
+  border-radius: 5em;
+  outline-style: none;
+  line-height: 1.5em;
+  transition: all .5s;
+  box-shadow: 0 15px 20px rgba(9, 116, 179, .2);
+  margin-left: 10px;
+  &:hover {
+    background: #27588d none repeat scroll 0% 0%;
+    color: #f9f9f9;
+    border: 0 solid #27588d;
+    box-shadow: 0 0 20px rgba(9, 116, 179, .2);
+  }
+  &:disabled {
+    opacity: 0.5;
+    background: rgba(70, 75, 77, 0.69) none repeat scroll 0% 0%;
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(9, 116, 179, .2);
+  }
+}
