@@ -17,15 +17,17 @@ class Map extends React.Component {
 
   render() {
     const { input, className } = this.props;
+    const inputValue = input.value.toJS ? input.value.toJS() : input.value;
     return (
       <div className={className}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyAQ5U-qyYN8fl-QGMTiWCeG2OI1Z8X6hfM' }}
           defaultCenter={this.props.center}
+          center={inputValue || this.props.center}
           defaultZoom={this.props.zoom}
           onClick={this.onMapClick}
         >
-          {input.value && <MapMarker {...input.value} />}
+          {input.value && <MapMarker {...inputValue} />}
         </GoogleMapReact>
       </div>
     );

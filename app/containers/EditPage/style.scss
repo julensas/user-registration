@@ -1,0 +1,15 @@
+@import "~styles/default.scss";
+
+.editPage {
+  background-color: #fff;
+  padding: 10px;
+  p {
+    text-align: center;
+    padding: 20px;
+    font-size: 1em;
+    a {
+      display: block;
+      color: $blue;
+    }
+  }
+}

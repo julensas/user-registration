@@ -28,7 +28,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={RegisterPage} />
         <Route exact path="/list" component={UserListPage} />
-        <Route exact path="/edit" component={EditPage} />
+        <Route exact path="/edit/:id" component={EditPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
