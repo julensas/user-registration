@@ -7,12 +7,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose, bindActionCreators } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import ActionButton from 'components/ActionButton';
 import makeSelectUserListPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
@@ -31,6 +33,7 @@ export class UserListPage extends React.Component {
   render() {
     const {
       userListPage: { data },
+      actions: { remove },
     } = this.props;
     return (
       <div className={style.list}>
@@ -54,11 +57,22 @@ export class UserListPage extends React.Component {
                 <td>{`${user.address.city} ${user.address.street} ${
                   user.address.streetNumber
                 } ${user.address.zip}`}</td>
-                <td>Edit Remove</td>
+                <td>
+                  <Link to={`edit/${user.id}`}>
+                    <button type="button">Edit</button>
+                  </Link>
+                  <ActionButton id={user.id} label="Remove" onClick={remove} />
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {data.length === 0 && (
+          <p>
+            There are no users.
+            <Link to="/">Create new user</Link>
+          </p>
+        )}
       </div>
     );
   }
@@ -68,6 +82,7 @@ UserListPage.propTypes = {
   actions: PropTypes.shape({
     getData: PropTypes.func.isRequired,
     clearState: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
   }),
   userListPage: PropTypes.shape({
     data: PropTypes.array.isRequired,

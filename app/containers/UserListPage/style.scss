@@ -4,10 +4,57 @@
   background-color: white;
   padding: 10px;
   min-height: 500px;
+  width: 100%;
+  p {
+    text-align: center;
+    padding: 20px;
+    a {
+      display: block;
+      color: $blue;
+    }
+  }
   table {
     width: 100%;
-    thead{
+    border-spacing: 3px;
+    border-collapse: collapse;
+    position: relative;
+    table-layout: fixed;
+    thead {
       color: $blue;
+      border-bottom: 1px solid #525358;
+      td {
+        &:nth-child(1) {
+          width: 20%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+        }
+        &:nth-child(4) {
+          width: 20%;
+        }
+      }
+    }
+    tbody {
+      color: #525358;
+      font-size: 14px;
+      line-height: 20px;
+      tr:nth-child(even) {
+        background: lighten($bg-color, 3%)
+      }
+      tr:hover {
+        background: darken($bg-color, 3%)
+      }
+      td {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      button {
+        color: $blue;
+        margin-right: 5px;
+        outline: none;
+        cursor: pointer;
+      }
     }
   }
 }

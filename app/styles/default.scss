@@ -25,3 +25,10 @@ h1 {
   font-size: 1.5em;
   color: $blue;
 }
+
+a {
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}

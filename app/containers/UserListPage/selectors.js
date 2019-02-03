@@ -12,6 +12,11 @@ const selectUserListPageDomain = state =>
  * Other specific selectors
  */
 
+const makeSelectUsers = () =>
+  createSelector(selectUserListPageDomain, substate =>
+    substate.get('data').toJS(),
+  );
+
 /**
  * Default selector used by UserListPage
  */
@@ -20,4 +25,4 @@ const makeSelectUserListPage = () =>
   createSelector(selectUserListPageDomain, substate => substate.toJS());
 
 export default makeSelectUserListPage;
-export { selectUserListPageDomain };
+export { selectUserListPageDomain, makeSelectUsers };
