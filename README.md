@@ -8,6 +8,8 @@
 4.  Run `npm run i` in order to install dependencies <br />
     _At this point you can run `npm start` to see the example app at `http://localhost:8080`._
     
-    Run `npm run test` in order to run unit test and see test coverage <br />
+Run `npm run test` in order to run unit test and see test coverage <br />
+
+Deployed [here](https://user-mngmt.herokuapp.com/)
     
  based on https://github.com/react-boilerplate/react-boilerplate
