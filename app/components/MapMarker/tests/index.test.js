@@ -1,11 +1,17 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+/**
+ * Testing Map MArker component
+ */
 
-// import MapMarker from '../index';
+import React from 'react';
+import { mount } from 'enzyme';
 
-describe('<MapMarker />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+import Marker from '../index';
+
+const renderComponent = (props = {}) => mount(<Marker {...props} />);
+
+describe('<Marker />', () => {
+  it('should render an <img>', () => {
+    const renderedComponent = renderComponent();
+    expect(renderedComponent.find('img')).toHaveLength(1);
   });
 });

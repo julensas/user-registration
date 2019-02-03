@@ -10,7 +10,7 @@ import {
 } from 'redux-form';
 import { push } from 'connected-react-router';
 import { DATA_KEY } from 'containers/App/constants';
-import { REGISTER, GET_ADDRESS } from './constants';
+import { REGISTER, GET_ADDRESS, ERROR } from './constants';
 
 function* register({ payload }) {
   yield put(startSubmit('user'));
@@ -55,7 +55,7 @@ function* getAddress({ payload }) {
       yield put(change('user', 'address.zip', address.zip));
     }
   } catch (e) {
-    console.log(e);
+    yield put({ type: ERROR });
   }
 }
 

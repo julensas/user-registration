@@ -13,7 +13,7 @@ import Map from 'components/Map';
 import Button from 'components/Button';
 import style from './style.scss';
 
-class UserForm extends React.Component {
+export class UserForm extends React.Component {
   onSubmit = data => {
     this.props.onFormSubmit(data.toJS());
   };

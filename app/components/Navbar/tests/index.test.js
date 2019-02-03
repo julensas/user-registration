@@ -1,11 +1,17 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+/**
+ * Testing Nav bar component
+ */
 
-// import Navbar from '../index';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { mount } from 'enzyme';
+import NavBar from '../index';
 
-describe('<Navbar />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+const renderComponent = (props = {}) => mount(<NavBar {...props} />);
+
+describe('<NavBar />', () => {
+  it('should contain 2 NavLink', () => {
+    const renderedComponent = renderComponent();
+    expect(renderedComponent.find(NavLink)).toHaveLength(2);
   });
 });

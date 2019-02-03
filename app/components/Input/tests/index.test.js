@@ -1,11 +1,30 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+/**
+ * Testing Input component
+ */
 
-// import Input from '../index';
+import React from 'react';
+import { mount } from 'enzyme';
 
-describe('<Input />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+import Input from '../index';
+
+const renderComponent = (props = {}) =>
+  mount(<Input label="input" input={{}} meta={{}} {...props} />);
+
+describe('<Input  />', () => {
+  it('should render an <input>', () => {
+    const renderedComponent = renderComponent();
+    expect(renderedComponent.find('input')).toHaveLength(1);
+  });
+
+  it('should render with specified label', () => {
+    const renderedComponent = renderComponent({ label: 'test' });
+    expect(renderedComponent.contains('test')).toEqual(true);
+  });
+
+  it('should render with error span if error props is specified', () => {
+    const renderedComponent = renderComponent({
+      meta: { error: 'error', touched: true },
+    });
+    expect(renderedComponent.contains('error')).toEqual(true);
   });
 });

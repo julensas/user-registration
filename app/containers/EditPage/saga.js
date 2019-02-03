@@ -14,6 +14,7 @@ import {
   GET_ADDRESS,
   GET_USER,
   GET_USER_SUCCESS,
+  ERROR,
 } from './constants';
 
 function* edit({ payload }) {
@@ -70,7 +71,7 @@ function* getAddress({ payload }) {
       yield put(change('user', 'address.zip', address.zip));
     }
   } catch (e) {
-    console.log(e);
+    yield put({ type: ERROR });
   }
 }
 

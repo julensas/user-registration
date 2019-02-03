@@ -1,11 +1,23 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+/**
+ * Testing our Button component
+ */
 
-// import Button from '../index';
+import React from 'react';
+import { mount } from 'enzyme';
+
+import Button from '../index';
+
+const renderComponent = (props = {}) =>
+  mount(<Button label="test" {...props} />);
 
 describe('<Button />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render an <button>', () => {
+    const renderedComponent = renderComponent();
+    expect(renderedComponent.find('button')).toHaveLength(1);
+  });
+
+  it('should render a <button> with specified label', () => {
+    const renderedComponent = renderComponent({ label: 'test4' });
+    expect(renderedComponent.contains('test4')).toEqual(true);
   });
 });
