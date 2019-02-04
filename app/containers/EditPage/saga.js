@@ -55,7 +55,7 @@ function* edit({ payload }) {
 function* getUserById({ payload }) {
   const users = JSON.parse(localStorage.getItem(DATA_KEY));
   const selectedUser = users.find(user => user.id === payload);
-  yield put({ type: GET_USER_SUCCESS, payload: selectedUser });
+  yield put({ type: GET_USER_SUCCESS, payload: selectedUser || {} });
 }
 
 function* getAddress({ payload }) {
