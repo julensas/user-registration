@@ -54,9 +54,8 @@ export class UserListPage extends React.Component {
               <tr key={user.id}>
                 <td>{user.fullName}</td>
                 <td>{user.email}</td>
-                <td>{`${user.address.city} ${user.address.street} ${
-                  user.address.streetNumber
-                } ${user.address.zip}`}</td>
+                <td>{`${user.address.city} ${user.address.street || ''} ${user
+                  .address.streetNumber || ''} ${user.address.zip || ''}`}</td>
                 <td>
                   <Link to={`edit/${user.id}`}>
                     <button type="button">Edit</button>
